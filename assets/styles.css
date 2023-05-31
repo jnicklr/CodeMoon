@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap');
+
+/*CONFIGURAÇÕES GERAIS DO CSS*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+/*INICIO DO CABEÇALHO DA PÁGINA; TOPO DA PÁGINA*/
+
+header {
+    background-image: url('../img/emile-perron-xrVDYZRGdw4-unsplash.jpg');
+    background-position: 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-start {
+    /*Cria um espaço no inicio que corresponde ao tamanho do header para corrigir a falha do fixed.*/
+    width: 100%;
+    height: 70px;
+}
+
+#header-debug {
+    /*Coloquei Id para facilitar caso eu venha reutilizar o header sem essa opção de fixed.*/
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px 10px 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-item-1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-item-2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.header-item-1-logo {
+    width: 52px;
+    height: 52px;
+}
+
+.header-item-1-title {
+    margin: 0;
+    margin-left: 10px;
+    color: #ffffff;
+    width: 115px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+
+.header-nav-item {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+#login {
+    color: #00ccff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    background-color: #fff;
+}
+
+#login:hover {
+    background-color: #ffffffd3;
+    color: #07a1c7;
+}
+
+.header-nav-item::before,
+.header-nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #00ccff;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-nav-item::before {
+    left: 50%;
+}
+
+.header-nav-item::after {
+    right: 50%;
+}
+
+.header-nav-item:hover::before {
+    width: 50%;
+    left: 0;
+}
+
+.header-nav-item:hover::after {
+    width: 50%;
+    right: 0;
+}
+
+
+/*INICIO DO CONTEÚDO DA PÁGINA; TOPO DA PÁGINA*/
+
+.main-container p {
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 75vh;
+    margin: 0;
+    position: relative;
+}
+
+.main-content-1 {
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-item-1 {
+    position: absolute;
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-item-1-title {
+    font-size: 50px;
+}
+
+.main-item-1-text {
+    margin-bottom: 10px !important;
+    padding: 0 80px 0 80px;
+    font-size: 15px;
+}
+
+.register-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #00ccff;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    height: 50px;
+    width: 300px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.register-button:hover {
+    background-color: #070e3c;
+    color: #fff;
+}
+
+@media (max-width: 962px) {
+    .header-container {
+        padding: 10px 50px 10px 50px;
+    }
+    .main-container {
+        height: 500px;
+    }
+}
+
+@media (max-width: 860px) {
+    .main-container {
+        height: auto;
+        background-position: top;
+    }
+    .main-content-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-item-1 {
+        text-align: justify;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .main-item-1-title {
+        text-align: center;
+    }
+    .main-content-1 {
+        flex-basis: 100%;
+    }
+}
+
+
+/*ESTILIZAÇÃO DAS ÂNCORAS DE FLECHAS*/
+
+.arrow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-img {
+    padding-top: 20px;
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.arrow-img:hover {
+    scale: 1.2;
+}
+
+
+/*INICIO DO CONTEÚDO PRINCIPAL DA PÁGINA*/
+
+
+/*AS TRÊS SEGUINTES CLASSES CARACTERIZAM ALGO COMUM ENTRE TODAS!*/
+
+.course-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.nav-content-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #00ccff;
+    font-weight: bold;
+}
+
+.menu-text-contrast {
+    color: #07a1c7;
+    border-bottom: 2px solid #07a1c7;
+}
+
+
+/*CSS DO CONTEÚDO SERVICES DA NAV*/
+
+.service-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: #dfddddc5;
+}
+
+.service-card-container {
+    width: 100%;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    place-items: center;
+    padding: 20px;
+}
+
+.service-card-item {
+    width: 350px;
+    height: auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #ffff;
+}
+
+.service-card-title {
+    color: #07a1c7;
+}
+
+.service-card-text {
+    color: #00000067;
+    margin: 0;
+    font-size: 15px;
+}
+
+@media (max-width: 990px) {
+    .service-container {
+        padding: 0;
+    }
+}
+
+
+/*CSS DO CONTEÚDO ABOUT DA NAV*/
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80vh;
+    margin: 0;
+    position: relative;
+}
+
+.about-content {
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 40px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+
+.about-img {
+    position: relative;
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+}
+
+.about-title {
+    font-size: 25px;
+    color: #07a1c7;
+    margin: 0;
+}
+
+.about-text-cit {
+    border-left: 3px solid black;
+    padding: 10px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#programmer-boy {
+    filter: hue-rotate(35deg);
+}
+
+@media (max-width: 962px) {
+    .about-container {
+        height: 500px;
+    }
+}
+
+@media (max-width: 860px) {
+    .about-img img {
+        width: 70%;
+        height: auto;
+    }
+    .about-container {
+        height: auto;
+        background-position: top;
+    }
+    .abot-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-item {
+        text-align: justify;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about-title {
+        text-align: center;
+    }
+    .about-img,
+    .about-content {
+        flex-basis: 100%;
+    }
+}
+
+
+/*CSS DO CONTEÚDO TEAM DA NAV*/
+
+.team-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 70px;
+    padding-left: 70px;
+    margin-bottom: 20px;
+    background-color: #dfddddc5;
+}
+
+.team-content {
+    width: 100%;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    padding: 20px;
+}
+
+.team-card-img {
+    width: 250px;
+    height: auto;
+}
+
+.team-card {
+    width: 250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    color: #00ccff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+
+.team-card h3 {
+    margin: 0;
+}
+
+.team-card p {
+    color: #00000067;
+    margin: 0 0 10px 0;
+}
+
+
+/*CSS DO CONTEÚDO DE REGISTRO FINAL DA PÁGINA*/
+
+.course-register {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.course-register-inner {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.course-register-inner h3 {
+    margin: 0;
+    font-size: 30px;
+    color: #07a1c7;
+}
+
+
+/*Configurações extra para o register button que está presente no fina da página.*/
+
+.register-button p {
+    margin: 0;
+}
+
+#register-button-last {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*CSS DO RODAPÉ DA PÁGINA*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: #00000067;
+}
