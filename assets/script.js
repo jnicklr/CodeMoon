@@ -9,7 +9,7 @@ const data = JSON.parse(storedData);
 data.forEach((video, i) => {
     let video_element = `
     <div class="video" data-id="${video.id}">
-      <img src="images/entertainment-control-button-play.png" alt="">
+      <img src="img/entertainment-control-button-play.png" alt="">
       <p>${i + 1 > 9 ? i + 1 : '0' + (i + 1)}. </p>
       <h3 class="title">${video.title}</h3>
       <p class="time">${video.duration}</p>
@@ -20,17 +20,17 @@ data.forEach((video, i) => {
 
 let videos = document.querySelectorAll('.video');
 videos[0].classList.add('active');
-videos[0].querySelector('img').src = 'images/entertainment-control-button-pause-2.png';
+videos[0].querySelector('img').src = 'img/entertainment-control-button-pause-2.png';
 
 videos.forEach(selected_video => {
     selected_video.onclick = () => {
         for (all_videos of videos) {
             all_videos.classList.remove('active');
-            all_videos.querySelector('img').src = 'images/entertainment-control-button-play.png';
+            all_videos.querySelector('img').src = 'img/entertainment-control-button-play.png';
         }
 
         selected_video.classList.add('active');
-        selected_video.querySelector('img').src = 'images/entertainment-control-button-pause-2.png';
+        selected_video.querySelector('img').src = 'img/entertainment-control-button-pause-2.png';
 
         let match_video = data.find(video => video.id == selected_video.dataset.id);
         let videoId = extractYouTubeVideoId(match_video.link);
@@ -39,6 +39,12 @@ videos.forEach(selected_video => {
         main_video_title.innerHTML = match_video.title;
     };
 });
+
+let match_video = data[0];
+let videoId = extractYouTubeVideoId(match_video.link);
+let youtubeEmbedUrl = `https://www.youtube.com/embed/${videoId}`;
+main_video.src = youtubeEmbedUrl;
+main_video_title.innerHTML = match_video.title;
 
 // Function to extract the YouTube video ID from the link
 function extractYouTubeVideoId(url) {

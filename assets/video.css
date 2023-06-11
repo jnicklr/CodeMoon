@@ -134,6 +134,10 @@ header {
     }
 }
 
+iframe {
+    background-color: #fff;
+}
+
 .main-video,
 .video-playlist {
     width: 100%;
