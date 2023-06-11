@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,200&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #0d1117;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+header {
+    background-image: url('/landscapes/6252653.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 25px;
+}
+
+.page-start {
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+}
+
+#header-debug {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px 10px 100px;
+    background-color: #0d1117;
+    border-bottom: 1px solid #fff;
+}
+
+.header-item-1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-item-2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.header-item-1-logo {
+    width: 52px;
+    height: 52px;
+}
+
+.header-item-1-title {
+    margin: 0;
+    margin-left: 10px;
+    color: #fff;
+    width: 115px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+
+.header-nav-item {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+.header-nav-item::before,
+.header-nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #00ccff;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-nav-item::before {
+    left: 50%;
+}
+
+.header-nav-item::after {
+    right: 50%;
+}
+
+.header-nav-item:hover::before {
+    width: 50%;
+    left: 0;
+}
+
+.header-nav-item:hover::after {
+    width: 50%;
+    right: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 1rem;
+    padding: .5rem 1rem;
+}
+
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-video,
+.video-playlist {
+    width: 100%;
+    height: 30rem;
+}
+
+.main-video .title {
+    margin-top: 1rem;
+}
+
+.video-playlist .title {
+    padding-left: 1rem;
+}
+
+.video-playlist>p {
+    padding: 1rem;
+    color: var(--secondary);
+}
+
+.video-playlist .videos {
+    height: 90%;
+    overflow-y: auto;
+}
+
+.video-playlist .videos::-webkit-scrollbar {
+    width: .4rem;
+    border-radius: .4rem;
+    background-color: #0005;
+}
+
+.video-playlist .videos::-webkit-scrollbar-thumb {
+    border-radius: .4rem;
+    background-color: #fff;
+}
+
+.video-playlist .videos .video {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: .1rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.video-playlist .videos .video:hover {
+    background-color: rgba(202, 202, 202, 0.2);
+}
+
+.video-playlist .videos .video.active {
+    background-color: rgba(202, 202, 202, 0.2);
+    color: var(--secondary);
+}
+
+.main-video iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+
+.video img {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.video-playlist .videos .video.active img {
+    filter: invert(100%) sepia(100%) saturate(20%) hue-rotate(360deg);
+}
+
+.video p {
+    margin-left: 2.5rem;
+}
+
+.video h3 {
+    width: 23rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: 100 1rem sans-serif;
+    padding: 0 .5rem;
+}
