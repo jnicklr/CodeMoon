@@ -17,6 +17,17 @@ body {
     background-color: #fff;
 }
 
+body::-webkit-scrollbar {
+    width: 0.8rem;
+    border-radius: .5rem;
+    background-color: #0005;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: .4rem;
+    background-color: #fff;
+}
+
 
 /*INICIO DO CABEÇALHO DA PÁGINA; TOPO DA PÁGINA*/
 
@@ -221,6 +232,7 @@ header {
     .main-container {
         height: auto;
         background-position: top;
+        height: 80vh;
     }
     .main-content-1 {
         display: flex;
@@ -439,6 +451,12 @@ header {
     .about-content {
         flex-basis: 100%;
     }
+    .course-register-inner p {
+        align-items: center;
+    }
+    .team-container {
+        padding: 0 !important;
+    }
 }
 
 
@@ -459,14 +477,18 @@ header {
     width: 100%;
     display: grid;
     row-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-items: center;
     padding: 20px;
 }
 
 .team-card-img {
-    width: 250px;
+    margin: 20px 0 20px 0;
+    padding: 5px;
+    width: 200px;
     height: auto;
+    border-radius: 100%;
+    border: 2px solid #00ccff;
 }
 
 .team-card {
@@ -479,9 +501,14 @@ header {
     text-align: center;
     background-color: #fff;
     color: #00ccff;
-    border-radius: 5px;
-    border: 1px solid #fff;
+    border-radius: 8px;
     overflow: hidden;
+    transition: 1s;
+}
+
+.team-card:hover {
+    scale: 1.015;
+    box-shadow: 10px 10px rgb(139, 255, 255);
 }
 
 .team-card h3 {
@@ -489,8 +516,15 @@ header {
 }
 
 .team-card p {
+    font-size: 12px;
+    font-weight: bold;
     color: #00000067;
     margin: 0 0 10px 0;
+}
+
+.team-card-mini-img {
+    width: 100%;
+    padding: 10px;
 }
 
 
