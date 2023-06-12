@@ -17,17 +17,6 @@ body {
     background-color: #fff;
 }
 
-body::-webkit-scrollbar {
-    width: 0.8rem;
-    border-radius: .5rem;
-    background-color: #0005;
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: .4rem;
-    background-color: #fff;
-}
-
 
 /*INICIO DO CABEÇALHO DA PÁGINA; TOPO DA PÁGINA*/
 
